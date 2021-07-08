@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :posts
   post 'checkout/create' => 'checkout#create', as: "checkout_create"
   post "billing_portal/create" => 'billing_portal#create', as: "billing_portal_create"
+  resources :webhooks, only: [:create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
