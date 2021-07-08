@@ -4,5 +4,4 @@ Rails.configuration.stripe = {
   :webhook         => ENV['WEBHOOK_SIGNING_SECRET']
 }
 Stripe.api_key = Rails.configuration.stripe[:secret_key]
-# For future reference
-# Stripe.api_key = Rails.configuration.stripe(:secret_key,:publishable_key)
+

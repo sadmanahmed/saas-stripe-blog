@@ -7,7 +7,7 @@ class WebhooksController < ApplicationController
     event = nil
     begin
       event = Stripe::Webhook.construct_event(
-        payload, sig_header, Rails.configuration.stripe(:secret_key,:webhook)
+        payload, sig_header, Rails.configuration.stripe[:webhook]
       )
     rescue JSON::ParserError => e
       status 400
